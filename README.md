@@ -3,7 +3,7 @@
 
 A utility for collecting information about guests of your IP for Gotify.
 
-![Gotify Screenshot](https://github.com/eterline/echidna/tree/main/screenshoots/logo.png)
+<img src="https://github.com/eterline/echidna/tree/main/screenshoots/logo.png"/>
 
 
 
@@ -18,5 +18,5 @@ A utility for collecting information about guests of your IP for Gotify.
 
 ## Notification example
 
-![Gotify Screenshot](https://github.com/eterline/echidna/tree/main/screenshoots/notif.jpg)
+<img src="https://github.com/eterline/echidna/tree/main/screenshoots/notif.jpg"/>
 
