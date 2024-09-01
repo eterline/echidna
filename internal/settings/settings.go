@@ -9,20 +9,20 @@ import (
 )
 
 type Config struct {
-	Host     string
-	Addr     Addr
-	Gotify   Gotify
-	StartMsg bool
+	Host     string `yaml:"Host"`
+	Addr     Addr   `yaml:"Addr"`
+	Gotify   Gotify `yaml:"Gotify"`
+	StartMsg bool   `yaml:"StartMsg"`
 }
 
 type Addr struct {
-	Ip   string
-	Port string
+	Ip   string `yaml:"Ip"`
+	Port string `yaml:"Port"`
 }
 
 type Gotify struct {
-	URL    string
-	ApiKey string
+	URL    string `yaml:"URL"`
+	ApiKey string `yaml:"ApiKey"`
 }
 
 func Parse() Config {
@@ -30,14 +30,13 @@ func Parse() Config {
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-
 	var cfg Config
 	decoder := yaml.NewDecoder(file)
 	err = decoder.Decode(&cfg)
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	u, err := url.ParseRequestURI("http://google.com/")
+	u, err := url.ParseRequestURI(cfg.Gotify.URL)
 	if err != nil {
 		log.Fatal(err.Error())
 	}

@@ -54,7 +54,6 @@ func SendMessage(r *http.Request, c settings.Config) {
 	http.PostForm(remote,
 		url.Values{"message": {msg}, "title": {"Echidna catcher"}})
 }
-
 func StartMessage(c settings.Config) {
 	if c.StartMsg {
 		remote := fmt.Sprintf("%smessage?token=%s", c.Gotify.URL, c.Gotify.ApiKey)
