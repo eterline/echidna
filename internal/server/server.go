@@ -16,12 +16,12 @@ type Server struct {
 }
 
 func New(c settings.Config) *Server {
-	var s *Server
+	var s Server
 	s.Router = mux.NewRouter()
 	s.Settings = c
 	s.Router.Use(s.catcher)
 	s.Router.HandleFunc("/", base)
-	return s
+	return &s
 }
 
 func base(w http.ResponseWriter, r *http.Request) {
