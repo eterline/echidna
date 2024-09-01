@@ -1,0 +1,14 @@
+[Unit]
+Description=Echidna IP catcher.
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/root/echidna/echidna
+WorkingDirectory=/root/echidna/
+Restart=on-failure/always
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target
