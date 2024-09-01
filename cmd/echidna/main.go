@@ -20,6 +20,7 @@ func main() {
 	)
 	file, _ := os.Create(logPath)
 	log.SetOutput(file)
+	defer file.Close()
 
 	cfg := settings.Parse()
 	gotify.StartMessage(cfg)
