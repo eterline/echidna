@@ -15,11 +15,13 @@ type Server struct {
 	Settings settings.Config
 }
 
-func (s *Server) New(c settings.Config) {
+func New(c settings.Config) *Server {
+	var s *Server
 	s.Router = mux.NewRouter()
 	s.Settings = c
 	s.Router.Use(s.catcher)
 	s.Router.HandleFunc("/", base)
+	return s
 }
 
 func base(w http.ResponseWriter, r *http.Request) {
